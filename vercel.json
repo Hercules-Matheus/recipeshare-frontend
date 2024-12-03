@@ -2,18 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/**",
+      "src": "webpack.config.js",
       "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/dist/index.html"
-    },
-    {
-      "src": "/pages/(.*)",
-      "dest": "/dist/pages/$1"
     }
   ]
 }
