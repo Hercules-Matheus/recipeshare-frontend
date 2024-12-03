@@ -17,7 +17,7 @@ document.head.appendChild(link);
 
 document.addEventListener("DOMContentLoaded", function () {
   // Aplicar a fonte Poppins globalmente
-  document.documentElement.style.fontFamily = "Poppins, sans-serif";
+  document.body.style.fontFamily = "Poppins, sans-serif";
 
   let authToken = localStorage.getItem("token");
 
