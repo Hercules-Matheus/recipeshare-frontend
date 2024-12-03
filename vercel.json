@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "public": "dist",
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/home", "destination": "/home_page.html" },
+    { "source": "/recipes", "destination": "/my_recipe_page.html" },
+    { "source": "/signup", "destination": "/signup_page.html" },
+    { "source": "/edit-recipe", "destination": "/edit_recipe_page.html" }
+  ]
+}

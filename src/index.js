@@ -4,6 +4,8 @@ import {
   createUserWithEmailAndPassword,
 } from "./firebase-config.js";
 
+import "../style.css";
+
 document.addEventListener("DOMContentLoaded", function () {
   let authToken = localStorage.getItem("token");
 
@@ -60,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const token = await userCredential.user.getIdToken();
       localStorage.setItem("token", token);
       console.log("Login bem-sucedido!");
-      window.location.href = "pages/home_page.html"; // Navegação para a página inicial
+      window.location.href = "./home_page.html"; // Navegação para a página inicial
     } catch (error) {
       console.error("Erro ao realizar login:", error.message);
       alert("Erro ao realizar login: " + error.message);
@@ -91,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (response.ok) {
         alert("Usuário cadastrado com sucesso!");
-        window.location.href = "pages/home_page.html"; // Navegação para a página inicial após cadastro
+        window.location.href = "./home_page.html"; // Navegação para a página inicial após cadastro
       } else {
         alert("Erro ao cadastrar usuário na API!");
       }
@@ -104,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
   async function loadAllRecipes() {
     if (!authToken) {
       alert("Você precisa estar logado para acessar esta página.");
-      window.location.href = "../index.html"; // Redirecionar para login se não autenticado
+      window.location.href = "./index.html"; // Redirecionar para login se não autenticado
       return;
     }
 
@@ -156,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", (event) => {
         const recipeId = event.target.getAttribute("data-id");
         localStorage.setItem("editRecipeId", recipeId); // Armazena o ID no localStorage
-        window.location.href = "edit_recipe_page.html"; // Redireciona para a página de edição
+        window.location.href = "./edit_recipe_page.html"; // Redireciona para a página de edição
       });
     });
 
@@ -187,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (response.ok) {
         alert("Receita atualizada com sucesso!");
-        window.location.href = "my_recipe_page.html";
+        window.location.href = "./my_recipe_page.html";
       } else {
         alert("Erro ao atualizar receita.");
       }
@@ -239,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
       card.addEventListener("click", (event) => {
         const recipeId = event.currentTarget.getAttribute("data-id");
         localStorage.setItem("recipeId", recipeId); // Armazena o ID no localStorage
-        window.location.href = "recipe_page.html"; // Redireciona para a página de edição
+        window.location.href = "./recipe_page.html"; // Redireciona para a página de edição
       });
     });
   }
@@ -358,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       await auth.signOut();
       localStorage.removeItem("token");
-      window.location.href = "../index.html"; // Navegação para página de login após logout
+      window.location.href = "./index.html"; // Navegação para página de login após logout
       alert("Logout realizado com sucesso!");
     } catch (error) {
       console.error("Erro ao realizar logout:", error);
@@ -386,39 +388,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (document.getElementById("home-page")) {
       document.getElementById("all-recipes").addEventListener("click", () => {
-        window.location.href = "home_page.html";
+        window.location.href = "./home_page.html";
       });
       document.getElementById("logout").addEventListener("click", logout);
       document
         .getElementById("recipe-navigate")
         .addEventListener("click", () => {
-          window.location.href = "my_recipe_page.html";
+          window.location.href = "./my_recipe_page.html";
         });
       loadAllRecipes();
     }
     if (document.getElementById("createBtn")) {
       document.getElementById("backBtn").addEventListener("click", () => {
-        window.location.href = "home_page.html";
+        window.location.href = "./home_page.html";
       });
       document.getElementById("createBtn").addEventListener("click", addRecipe);
       loadRecipes();
     }
     if (document.getElementById("recipe-page")) {
       document.getElementById("all-recipes").addEventListener("click", () => {
-        window.location.href = "home_page.html";
+        window.location.href = "./home_page.html";
       });
       document.getElementById("logout").addEventListener("click", logout);
       document
         .getElementById("recipe-navigate")
         .addEventListener("click", () => {
-          window.location.href = "my_recipe_page.html";
+          window.location.href = "./my_recipe_page.html";
         });
       const recipeId = localStorage.getItem("recipeId");
       loadRecipeById(recipeId);
     }
     if (document.getElementById("saveBtn")) {
       document.getElementById("backBtn").addEventListener("click", () => {
-        window.location.href = "home_page.html";
+        window.location.href = "./home_page.html";
       });
       const recipeId = localStorage.getItem("editRecipeId");
       if (recipeId) {
@@ -428,7 +430,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       } else {
         alert("ID da receita não encontrado.");
-        window.location.href = "my_recipe_page.html";
+        window.location.href = "./my_recipe_page.html";
       }
     }
   }
