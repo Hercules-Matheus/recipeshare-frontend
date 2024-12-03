@@ -20,6 +20,7 @@ module.exports = {
       template: "./index.html",
       filename: "index.html",
     }),
+    // Outros plugins se necessários
   ],
   // outras configurações
 };
