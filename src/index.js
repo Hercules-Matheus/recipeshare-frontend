@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
       authToken = token;
       localStorage.setItem("token", token);
       const response = await fetch(
-        "https://recipeshare-backend-5868bfd6cbe6.herokuapp.com/register",
+        "https://recipeshare-backend.onrender.com/register",
         {
           method: "POST",
           headers: {
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     try {
       const response = await fetch(
-        "https://recipeshare-backend-5868bfd6cbe6.herokuapp.com/recipes/all",
+        "https://recipeshare-backend.onrender.com/recipes/all",
         {
           method: "GET",
           headers: {
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     try {
       const response = await fetch(
-        `https://recipeshare-backend-5868bfd6cbe6.herokuapp.com/recipes/${recipeId}`,
+        `https://recipeshare-backend.onrender.com/recipes/${recipeId}`,
         {
           method: "PUT",
           headers: {
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
   async function deleteRecipe(recipeId) {
     try {
       const response = await fetch(
-        `https://recipeshare-backend-5868bfd6cbe6.herokuapp.com/recipes/${recipeId}`,
+        `https://recipeshare-backend.onrender.com/recipes/${recipeId}`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${authToken}` },
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     try {
       const response = await fetch(
-        "https://recipeshare-backend-5868bfd6cbe6.herokuapp.com/recipes",
+        "https://recipeshare-backend.onrender.com/recipes",
         {
           method: "POST",
           headers: {
@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
   async function loadRecipes() {
     try {
       const response = await fetch(
-        "https://recipeshare-backend-5868bfd6cbe6.herokuapp.com/recipes",
+        "https://recipeshare-backend.onrender.com/recipes",
         {
           method: "GET",
           headers: { Authorization: `Bearer ${authToken}` },
@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
   async function loadRecipeById(recipeId) {
     try {
       const response = await fetch(
-        `https://recipeshare-backend-5868bfd6cbe6.herokuapp.com/recipes/${recipeId}`,
+        `https://recipeshare-backend.onrender.com/recipes/${recipeId}`,
         {
           method: "GET",
           headers: { Authorization: `Bearer ${authToken}` },
@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
   async function loadRecipeDetails(recipeId) {
     try {
       const response = await fetch(
-        `https://recipeshare-backend-5868bfd6cbe6.herokuapp.com/recipes/${recipeId}`,
+        `https://recipeshare-backend.onrender.com/recipes/${recipeId}`,
         {
           method: "GET",
           headers: { Authorization: `Bearer ${authToken}` },
