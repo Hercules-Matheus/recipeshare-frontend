@@ -122,6 +122,7 @@ form {
   margin-bottom: 20px;
 }
 
+.usersame,
 input[type="text"],
 input[type="email"],
 input[type="password"] {
